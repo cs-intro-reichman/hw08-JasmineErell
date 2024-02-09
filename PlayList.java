@@ -74,14 +74,23 @@ class PlayList
     /** Removes the last track from this list. If the list is empty, does nothing. */
      public void removeLast() 
      {
-        Track [] removedTracks = new Track[this.size-1];
-        if (removedTracks.length!=0) 
+        if (this.size!=0)
         {
-            for (int i =0 ; i<removedTracks.length; i++)
+            this.size--;
+            for (int i = 0; i<this.size; i++)
             {
-                removedTracks[i] = tracks[i];
-            }  
+                tracks[i] = tracks[i];
+            }
         }
+        
+        // Track [] removedTracks = new Track[this.size-1];
+        // if (removedTracks.length!=0) 
+        // {
+        //     for (int i =0 ; i<removedTracks.length; i++)
+        //     {
+        //         removedTracks[i] = tracks[i];
+        //     }  
+        // }
     }
     
     /** Returns the total duration (in seconds) of all the tracks in this list.*/
@@ -146,14 +155,6 @@ class PlayList
         if (i<0 || i>this.maxSize)
         {
             System.out.println("-1");
-        }
-        else if (i == this.size)
-        {
-            this.size --;
-            for (int j = 0; j<this.size; j++)
-            {
-                tracks[j] = tracks[j];
-            }
         }
         else
         {

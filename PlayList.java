@@ -147,6 +147,14 @@ class PlayList
         {
             System.out.println("-1");
         }
+        else if (i == this.size)
+        {
+            this.size --;
+            for (int j = 0; j<this.size; j++)
+            {
+                tracks[j] = tracks[j];
+            }
+        }
         else
         {
             for (int j = 0; j<i; j++)// puts the tracks until i in the array
@@ -188,17 +196,17 @@ class PlayList
     /** Adds all the tracks in the other list to the end of this list. 
      *  If the total size of both lists is too large, does nothing. */
     //// An elegant and terribly inefficient implementation.
-    //  public void add(PlayList other) 
-    // {
-    //     int totalSize = this.size + other.size;
-    //     if (!(totalSize>this.maxSize))
-    //     {
-    //         for (int i = 0; i<other.size; i++)
-    //         {
-    //             tracks[this.size+i+1] = other.getTrack(i);
-    //         }
-    //     }
-    // }
+     public void add(PlayList other) 
+    {
+        int totalSize = this.size + other.size;
+        if (!(totalSize>this.maxSize))
+        {
+            for (int i = 0; i<other.size; i++)
+            {
+                tracks[this.size+i+1] = other.getTrack(i);
+            }
+        }
+    }
 
     /** Returns the index in this list of the track that has the shortest duration,
      *  starting the search in location start. For example, if the durations are 

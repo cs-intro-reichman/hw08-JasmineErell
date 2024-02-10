@@ -145,7 +145,7 @@ public class PlayList
     {
         Track [] removedTracks = new Track[this.size-1];
         Track [] tempTracks = new Track[this.size-i];
-        if (i<0 || i>this.maxSize)
+        if (this.size == 0 || i<0 || i>this.maxSize)
         {
             System.out.println("-1");
         }
@@ -155,10 +155,7 @@ public class PlayList
             {
                 removedTracks[j] = tracks[j];
             }
-            for (int j = 0; j<tracks.length-i; j++)// puts the tracks after i in the temp array (not perfect)
-            {
-                tempTracks[j] = tracks[i+j+1];
-            }
+            
             for (int j = i  ; j<removedTracks.length; j++)
             {
                 removedTracks[j] = tracks[j+1];

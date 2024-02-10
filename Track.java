@@ -11,8 +11,6 @@ public class Track {
         this.duration = duration;
     }
 
-    
-
     /** Returns this track's data as "artist, title, minutes:seconds".
      *  For example, "John Lennon, Imagine, 3:07" */
     public String toString()
@@ -60,3 +58,4 @@ public class Track {
         return res;
     }
 }
+

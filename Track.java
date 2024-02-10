@@ -1,6 +1,6 @@
 /** Represents a music track. A track has a title (String), an artist (String), 
  *  and a duration (int), in seconds. */
-class Track {
+public class Track {
     private String title;
     private String artist;
     private int duration;
@@ -11,6 +11,8 @@ class Track {
         this.duration = duration;
     }
 
+    
+
     /** Returns this track's data as "artist, title, minutes:seconds".
      *  For example, "John Lennon, Imagine, 3:07" */
     public String toString()
@@ -18,8 +20,7 @@ class Track {
         duration = getDuration();
         artist = getArtist();
         title = getTitle();
-
-        return artist + ", " + title + ", " + duration;
+        return artist + "," + title + ", " + duration;
     }
 
     /** Returns this track's title. */

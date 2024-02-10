@@ -1,8 +1,8 @@
-import javax.sound.midi.Track;
+
 
 /** Represnts a list of musical tracks. The list has a maximum capacity (int),
  *  and an actual size (number of tracks in the list, an int). */
-class PlayList 
+public class PlayList 
 {
     private Track[] tracks;  // Array of tracks (Track objects)   
     private int maxSize;     // Maximum number of tracks in the array
@@ -38,14 +38,15 @@ class PlayList
     /** Appends the given track to the end of this list. 
      *  If the list is full, does nothing and returns false.
      *  Otherwise, appends the track and returns true. */
-    public boolean add(Track track) {
+    public boolean add(Track track) 
+    {
        if (this.size >= this.maxSize)
        {
         return false;
        }
        else
        {
-        tracks[this.size] = track;
+        this.tracks[this.size] = track;
         this.size++;
        }
         return true;
@@ -55,18 +56,10 @@ class PlayList
     //// For an efficient implementation, use StringBuilder.
     public String toString() 
     {
-        String formatD = "";
-        String artist ="";
-        String title ="";
         String res = "";
-        int fd = 0 ; 
         for ( int i = 0; i<this.size; i++ )
         {
-            title = tracks[i].getTitle();
-            artist = tracks[i].getArtist();
-            fd = tracks[i].getDuration();
-            formatD = tracks[i].formattedDuration(fd);
-            res = res + title + " " + artist + " "  + formatD + '\n';
+            res += this.tracks[i].toString();
         }
         return res;
     }
@@ -97,8 +90,9 @@ class PlayList
     public int totalDuration() 
     {
         int totalD = 0; 
-        for (int i =0; i<this.size; i++)
+        for (int i = 0; i<this.size; i++)
         {
+
             totalD = totalD + tracks[i].getDuration();
         }
         return totalD;
@@ -127,7 +121,6 @@ class PlayList
      *  returns true. */
     public boolean add(int i, Track track) 
     {
-        Track [] addedTracks = new Track[this.size+1];
         Track tempTrack = tracks[i];
         if (this.size == this.maxSize || i<0 || i>this.maxSize)
         {
@@ -227,9 +220,9 @@ class PlayList
         {
             for (int i = start+1; i<this.size; i++)
             {
-                if (this.getTrack(i).getDouration()<minValue)
+                if (this.getTrack(i).getDuration()<minValue)
                 {
-                    minValue = this.getTrack(i).getDouration();
+                    minValue = this.getTrack(i).getDuration();
                     minIndex = i; 
 
                 }
@@ -260,21 +253,21 @@ class PlayList
      *  the list on which it was called (this list). */
     public void sortedInPlace() 
     {
-        Track tempTrack; 
-        for (int i = 0 ; i<this.size-1; i++)
-        {
-          int minIndex = i;
-          for (int j = i+1; j<this.size; j++)
-          {
-            if (this.getTrack(j).getDouration()<this.getTrack(minIndex).getDuration())
-            {
-                minIndex = j;
-            }
+        // Track tempTrack; 
+        // for (int i = 0 ; i<this.size-1; i++)
+        // {
+        //   int minIndex = i;
+        //   for (int j = i+1; j<this.size; j++)
+        //   {
+        //     if (this.getTrack(j).getDuration()<this.getTrack(minIndex).getDuration())
+        //     {
+        //         minIndex = j;
+        //     }
 
-          }
-          tempTrack = this.getTrack(i);
-          tracks[i] = tracks[j];
-          tracks[j] = tempTrack;
-        }
+        //   }
+        //   tempTrack = this.getTrack(i);
+        //   tracks[i] = tracks[j];
+        //   tracks[j] = tempTrack;
+        // }
     }
 }

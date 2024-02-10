@@ -143,23 +143,27 @@ public class PlayList
      *  does nothing and returns -1. */
     public void remove(int i)
     {
-        Track [] removedTracks = new Track[this.size-1];
         Track [] tempTracks = new Track[this.size-i];
+        int c = 0; 
         if (this.size == 0 || i<0 || i>this.maxSize)
         {
             System.out.println("-1");
         }
         else
         {
-            for (int j = 0; j<i; j++)// puts the tracks until i in the array
-            {
-                removedTracks[j] = tracks[j];
-            }
-            
-            for (int j = i  ; j<removedTracks.length; j++)
-            {
-                removedTracks[j] = tracks[j+1];
-            }
+           for (int j =0; j<this.size-i; j++)
+           {
+                tempTracks[j] = tracks[i+1];
+           }
+           this.size --;
+           for ( int j = 0; j<this.size; j++)
+           {
+                if (j>i)
+                {
+                    tracks[j] = tempTracks[c];
+                    c++;
+                }
+           }
         }
     }
 

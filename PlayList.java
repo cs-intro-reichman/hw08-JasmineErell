@@ -254,21 +254,21 @@ public class PlayList
      *  the list on which it was called (this list). */
     public void sortedInPlace() 
     {
-        // Track tempTrack; 
-        // for (int i = 0 ; i<this.size-1; i++)
-        // {
-        //   int minIndex = i;
-        //   for (int j = i+1; j<this.size; j++)
-        //   {
-        //     if (this.getTrack(j).getDuration()<this.getTrack(minIndex).getDuration())
-        //     {
-        //         minIndex = j;
-        //     }
-
-        //   }
-        //   tempTrack = this.getTrack(i);
-        //   tracks[i] = tracks[j];
-        //   tracks[j] = tempTrack;
-        // }
+        Track tempTrack; 
+        for (int i = 0 ; i<this.size-1; i++)
+        {
+          int minIndex = i;
+          for (int j = i+1; j<this.size; j++)
+          {
+            if (this.getTrack(j).getDuration()<this.getTrack(minIndex).getDuration())
+            {
+                minIndex = j;
+            }
+            tempTrack = this.getTrack(i);
+            tracks[i] = tracks[j];
+            tracks[j] = tempTrack;
+          }
+          
+        }
     }
 }

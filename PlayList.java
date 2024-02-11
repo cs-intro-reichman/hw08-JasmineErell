@@ -257,18 +257,18 @@ public class PlayList
         Track tempTrack; 
         for (int i = 0 ; i<this.size-1; i++)
         {
-          int minIndex = i;
+          int minIndex = minIndex(i);
           for (int j = i+1; j<this.size; j++)
           {
             if (this.getTrack(j).getDuration()<this.getTrack(minIndex).getDuration())
             {
                 minIndex = j;
             }
-            tempTrack = this.getTrack(i);
-            tracks[i] = tracks[j];
-            tracks[j] = tempTrack;
+
           }
-          
+          tempTrack = this.getTrack(i);
+          tracks[i] = tracks[minIndex];
+          tracks[minIndex] = tempTrack;
         }
     }
 }

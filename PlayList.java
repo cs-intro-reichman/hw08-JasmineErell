@@ -121,9 +121,9 @@ public class PlayList
      *  returns true. */
     public boolean add(int i, Track track) 
     {
-        if (i<size +1 && i>=0 && size<tracks.length)
+        if (i<this.size +1 && i>=0 && this.size<tracks.length)
         {
-            for (int j = size ; j>=i; j--)
+            for (int j = this.size ; j>=i; j--)
             {
                 tracks[j+1] = tracks[j];
             }
@@ -132,46 +132,6 @@ public class PlayList
             return true;
         }
         return false;
-        // Track [] tempList = new Track[this.size];
-        // tempList = tracks; 
-        // int c = 0;
-        // Track tempTrack = tracks[i];
-        // if (this.size == this.maxSize || i<0 || i>this.maxSize)
-        // {
-        //     return false;
-        // }
-        // else if (this.size == 0)
-        // {
-        //     tracks[0] = track;
-        // }
-        // else if (i==0)
-        // {
-        //     for (int j = 0; j<this.size; j++)
-        //     {
-        //         tempList[j] = tracks[j];
-        //     }
-
-        //     this.size++;
-        //     tracks[0] = track;
-        //     for (int j = 1; j<this.size; j++)
-        //     {
-        //         tracks[j] = tempList[j-1];
-        //     }
-
-        // }
-        // else if (i==this.size) 
-        // {
-        //     tracks[i] = track;
-        //     this.size ++;
-        // }
-        // else
-        // {
-        //      tracks[i] = track;
-        //      tracks[i+1] = tempTrack;
-        //      this.size++;
-             
-        // }
-        // return true;
     }
      
     /** Removes the track in the given index from this list.

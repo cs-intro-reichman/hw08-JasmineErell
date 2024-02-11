@@ -121,6 +121,9 @@ public class PlayList
      *  returns true. */
     public boolean add(int i, Track track) 
     {
+        Track [] tempList = new Track[this.size];
+        tempList = tracks; 
+        int c = 0;
         Track tempTrack = tracks[i];
         if (this.size == this.maxSize || i<0 || i>this.maxSize)
         {
@@ -130,10 +133,26 @@ public class PlayList
         {
             tracks[0] = track;
         }
+        else if (i==0)
+        {
+            tracks[0] = track;
+            this.size++;
+            for (int j = 1; j<this.size; j++)
+            {
+                tracks[j] =tempList[c];
+                c++;
+            }
+        }
+        else if (i==this.size) 
+        {
+            tracks[i] = track;
+            this.size ++;
+        }
         else
         {
              tracks[i] = track;
              tracks[i+1] = tempTrack;
+             
         }
         return true;
     }

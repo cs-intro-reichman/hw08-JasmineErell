@@ -1,4 +1,4 @@
-public class CombinedOperationsTester {
+public class Tester {
     public static void main(String[] args) {
         // Initialize the playlist with a capacity of 5 tracks
         PlayList playList = new PlayList(5);
@@ -34,8 +34,10 @@ public class CombinedOperationsTester {
 
 
         // Adding tracks at specific indexes
+        System.out.println(playList.toString());
         playList.add(0, new Track("Yesterday", "The Beatles", 125)); // Add at the beginning
         System.out.println("Track 'Yesterday' added at index 0.");
+        System.out.println(playList.toString());
         
         playList.add(playList.getSize(), new Track("Bohemian Rhapsody", "Queen", 354)); // Assuming to add at the end
         System.out.println("Track 'Bohemian Rhapsody' added at the end.");

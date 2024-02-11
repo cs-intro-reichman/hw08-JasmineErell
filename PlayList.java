@@ -209,23 +209,22 @@ public class PlayList
      *  minimum value (5) when starting the search from index 2.  
      *  If start is negative or greater than size - 1, returns -1.
      */
-    private int minIndex(int start) 
+    public int minIndex(int start) 
     {
         int minValue = this.getTrack(start).getDuration();
-        int minIndex = -1; 
+        int minIndex = -2; 
         if (start<0 || start>this.size)
         {
-            return -1;
+            minIndex = -1;
         }
-        else
+        else 
         {
-            for (int i = start+1; i<this.size; i++)
+            for (int i = start; i<this.size; i++)
             {
-                if (this.getTrack(i).getDuration()<minValue)
+                if ((this.getTrack(i).getDuration()) <= (minValue))
                 {
                     minValue = this.getTrack(i).getDuration();
                     minIndex = i; 
-
                 }
             }
         }
@@ -257,10 +256,10 @@ public class PlayList
         Track tempTrack; 
         for (int i = 0 ; i<this.size-1; i++)
         {
-          int minIndex = minIndex(i);
+          int minIndex = i;
           for (int j = i+1; j<this.size; j++)
           {
-            if (this.getTrack(j).getDuration()<this.getTrack(minIndex).getDuration())
+            if ((this.getTrack(j).getDuration())<(this.getTrack(minIndex).getDuration()))
             {
                 minIndex = j;
             }

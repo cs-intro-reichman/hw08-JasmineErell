@@ -21,9 +21,11 @@ class RuniFi {
         myList.add(track3);
         myList.add(track4); 
         myList.add(track5); 
+        myList.sortedInPlace();
+        System.out.println("after sorting");
         System.out.println(myList.toString());
-        // System.out.println(myList.getTrack(0).toString());
-        // System.out.println("aba");
+        int min = myList.minIndex(0);
+        System.out.println(min);
     
 
         // Displays the list

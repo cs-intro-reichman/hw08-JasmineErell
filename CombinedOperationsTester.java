@@ -42,6 +42,7 @@ public class CombinedOperationsTester {
         // System.out.println(playList.toString());
         
         // Removing a track by index
+        System.out.println(playList.toString());
         playList.remove(1); // This now refers to removing the second track which was "Imagine" initially
         System.out.println("Track at index 1 removed.");
         // System.out.println(playList.toString());
@@ -57,6 +58,7 @@ public class CombinedOperationsTester {
         
         // Final state of the playlist after additional operations
         System.out.println("Final Playlist Size after additional operations: " + playList.getSize());
+        System.out.println(playList.toString());
         System.out.println("Final Total Duration after additional operations: " + playList.totalDuration() + " seconds");
     }
     

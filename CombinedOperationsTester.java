@@ -39,17 +39,17 @@ public class CombinedOperationsTester {
         
         playList.add(playList.getSize(), new Track("Bohemian Rhapsody", "Queen", 354)); // Assuming to add at the end
         System.out.println("Track 'Bohemian Rhapsody' added at the end.");
-        System.out.println(playList.toString());
+        // System.out.println(playList.toString());
         
         // Removing a track by index
         playList.remove(1); // This now refers to removing the second track which was "Imagine" initially
         System.out.println("Track at index 1 removed.");
-        System.out.println(playList.toString());
+        // System.out.println(playList.toString());
         
         // Sorting the playlist
         playList.sortedInPlace();
         System.out.println("Playlist sorted by increasing duration.");
-        System.out.println(playList.toString());
+        // System.out.println(playList.toString());
     
         // Since we can't directly print sorted tracks, let's focus on aspects we can test
         // Displaying the title of the shortest track after sorting
